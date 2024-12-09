@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1>view Details</h1>
+<div class="container m-5 ">
+
+
+<div class="card mb-5 mx-auto bg-warning" style="max-width: 650px;">
+  <div class="row g-0">
+    <div class="col-md-4 p-4 ">
+      <img src="{{movie.image.url}}" class=" rounded-start" height="250px" width="100%" alt="...">
+    </div>
+
+    <div class="col-md-8 lh-lg ps-5">
+      <div class="card-body mt-3">
+        <h5 class="card-title">Title: {{movie.title}}</h5>
+        <p class="card-text">Description : {{movie.description}}</p>
+        <p class="card-text">language : {{movie.language}}</p>
+        <p class="card-text">year : {{movie.year}}</p>
+                  <a href="{% url 'edit' movie.id %}" class="btn btn-primary">Edit</a>
+          <a href="{% url 'delete' movie.id %}" class="btn btn-primary">Delete</a>
+      </div>
+    </div>
+  </div></div>
+</div>
+</div>
+
+
+{% endblock %}
